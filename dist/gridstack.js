@@ -197,7 +197,7 @@
         var nn = node;
         var hasLocked = Boolean(_.find(this.nodes, function(n) { return n.locked; }));
         if (!this.float && !hasLocked) {
-            nn = {x: 0, y: node.y, width: this.width, height: node.height};
+            nn = {x: node.x, y: node.y, width: node.width, height: node.height};
         }
         while (true) {
             var collisionNode = _.find(this.nodes, _.bind(Utils._collisionNodeCheck, {node: node, nn: nn}));
